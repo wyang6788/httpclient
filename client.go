@@ -36,7 +36,7 @@ func get(url string){
 	req, err := http.NewRequest("GET", url, nil)
 	req.Header.Set("Content-Type", "application/json")
 
-	client := &http.Client{}
+  client := &http.Client{}
     resp, err := client.Do(req)
     if err != nil {
         os.Exit(1)
@@ -48,11 +48,11 @@ func get(url string){
 }
 
 func post(url string, data string){
-	var jsonStr = []byte(data)
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
-	req.Header.Set("Content-Type", "application/json")
-
-	client := &http.Client{}
+  var jsonStr = []byte(data)
+  req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
+  req.Header.Set("Content-Type", "application/json")
+ 
+  client := &http.Client{}
     resp, err := client.Do(req)
     if err != nil {
         os.Exit(1)
@@ -64,10 +64,10 @@ func post(url string, data string){
 }
 
 func update(url string){
-	req, err := http.NewRequest("PUT", url, nil)
-	req.Header.Set("Content-Type", "application/json")
-
-	client := &http.Client{}
+  req, err := http.NewRequest("PUT", url, nil)
+  req.Header.Set("Content-Type", "application/json")
+ 
+  client := &http.Client{}
     resp, err := client.Do(req)
     if err != nil {
         os.Exit(1)
@@ -79,11 +79,10 @@ func update(url string){
 }
 
 func delete(url string, year string){
-	fmt.Println(url+"/"+year)
-	req, err := http.NewRequest("DELETE", url+"/"+year, nil)
-	req.Header.Set("Content-Type", "application/json")
+  req, err := http.NewRequest("DELETE", url+"/"+year, nil)
+  req.Header.Set("Content-Type", "application/json")
 
-	client := &http.Client{}
+  client := &http.Client{}
     resp, err := client.Do(req)
     if err != nil {
         os.Exit(1)
