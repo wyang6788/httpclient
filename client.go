@@ -33,8 +33,8 @@ func main(){
 }
 
 func get(url string){
-	req, err := http.NewRequest("GET", url, nil)
-	req.Header.Set("Content-Type", "application/json")
+  req, err := http.NewRequest("GET", url, nil)
+  req.Header.Set("Content-Type", "application/json")
 
   client := &http.Client{}
     resp, err := client.Do(req)
